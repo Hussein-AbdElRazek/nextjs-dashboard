@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import postgres from "postgres";
 import { invoices, customers, revenue, users } from "../lib/placeholder-data";
 
@@ -98,7 +98,7 @@ export async function GET() {
         });
 
         return Response.json({ message: "Database seeded successfully" });
-    } catch (error:any) {
+    } catch (error: any) {
         return Response.json({ error: error.message }, { status: 500 });
     }
 }
